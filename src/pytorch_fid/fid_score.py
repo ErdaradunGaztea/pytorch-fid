@@ -81,7 +81,7 @@ class ImagePathDataset(torch.utils.data.Dataset):
 
     def __getitem__(self, i):
         path = self.files[i]
-        img = Image.open(path).resize((200, 200)).convert('RGB')
+        img = Image.open(path).resize((32, 32)).convert('RGB')
         if self.transforms is not None:
             img = self.transforms(img)
         return img
